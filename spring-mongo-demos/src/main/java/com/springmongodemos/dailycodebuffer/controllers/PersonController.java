@@ -2,6 +2,7 @@ package com.springmongodemos.dailycodebuffer.controllers;
 
 import com.springmongodemos.dailycodebuffer.collections.Person;
 import com.springmongodemos.dailycodebuffer.services.PersonService;
+import org.bson.Document;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -58,5 +59,10 @@ public class PersonController {
     ) {
         Pageable pageable = PageRequest.of(page, size);
         return personService.search(name, minAge, maxAge, city, pageable);
+    }
+
+    @GetMapping("/oldestPerson")
+    public List<Document> getOldestPerson() {
+        return personService.getOldestPersonByCity();
     }
 }
