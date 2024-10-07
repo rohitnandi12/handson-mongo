@@ -1,5 +1,6 @@
 package com.springmongodemos;
 
+import com.github.javafaker.Faker;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -29,5 +30,9 @@ public class SpringMongoDemosApplication {
         return null;
     }
 
+    @Bean
+    public Faker faker() {
+        return Faker.instance();
+    }
 
 }
