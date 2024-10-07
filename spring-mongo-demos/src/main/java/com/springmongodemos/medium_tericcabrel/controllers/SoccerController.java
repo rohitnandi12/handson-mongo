@@ -1,5 +1,6 @@
 package com.springmongodemos.medium_tericcabrel.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -11,6 +12,8 @@ import com.springmongodemos.medium_tericcabrel.models.Player;
 import com.springmongodemos.medium_tericcabrel.models.Team;
 import com.springmongodemos.medium_tericcabrel.repositories.PlayerRepository;
 import com.springmongodemos.medium_tericcabrel.repositories.TeamRepository;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,16 +31,40 @@ public class SoccerController {
 
     @GetMapping("/teams")
     public ResponseEntity<List<Team>> getTeams() {
-        List<Team> teamCreated = teamRepository.findAll();
+//        List<Team> teamCreated = teamRepository.findAll();
+        List<Team> teamCreated = teamRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
 
-        return new ResponseEntity<>(teamCreated, HttpStatus.CREATED);
+        return new ResponseEntity<>(teamCreated, HttpStatus.OK);
     }
 
     @GetMapping("/players")
     public ResponseEntity<List<Player>> getPlayers() {
-        List<Player> teamCreated = playerRepository.findAll();
+        List<Order> orders = new ArrayList<>() {{
+            add(Order.by("position").with(Sort.Direction.ASC));
+            add(Order.by("name").with(Sort.Direction.DESC));
+        }};
+        List<Player> teamCreated = playerRepository.findAll(Sort.by(orders));
 
-        return new ResponseEntity<>(teamCreated, HttpStatus.CREATED);
+        return new ResponseEntity<>(teamCreated, HttpStatus.OK);
+    }
+
+    @GetMapping("/teams/{id}")
+    public ResponseEntity<Team> oneTeam(@PathVariable String id) {
+        Optional<Team> teamOptional = teamRepository.findById(id);
+
+        return teamOptional
+                .map(team -> new ResponseEntity<>(team, HttpStatus.OK))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/players/{id}")
+    public ResponseEntity<Player> onePlayer(@PathVariable String id) {
+        Optional<Player> playerOptional = playerRepository.findById(id);
+
+        return playerOptional
+                .map(player -> new ResponseEntity<>(player, HttpStatus.OK))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+
     }
 
     @PostMapping("/teams")
