@@ -12,6 +12,8 @@ import com.springmongodemos.medium_tericcabrel.models.Player;
 import com.springmongodemos.medium_tericcabrel.models.Team;
 import com.springmongodemos.medium_tericcabrel.repositories.PlayerRepository;
 import com.springmongodemos.medium_tericcabrel.repositories.TeamRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.http.HttpStatus;
@@ -64,7 +66,13 @@ public class SoccerController {
         return playerOptional
                 .map(player -> new ResponseEntity<>(player, HttpStatus.OK))
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
+    @GetMapping("/players-page")
+    public ResponseEntity<Page<Player>> listPlayersPage(@RequestParam int page) {
+        Page<Player> players = playerRepository.findByIdIsNotNull(PageRequest.of(page - 1, 10));
+
+        return new ResponseEntity<>(players, HttpStatus.OK);
     }
 
     @PostMapping("/teams")
