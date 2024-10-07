@@ -1,12 +1,12 @@
-package com.springmongodemos.medium_tericcabrel.bootstrap;
+package com.springmongodemos.tericcabrel.bootstrap;
 
 import com.github.javafaker.Faker;
-import com.springmongodemos.medium_tericcabrel.models.Address;
-import com.springmongodemos.medium_tericcabrel.models.Player;
-import com.springmongodemos.medium_tericcabrel.models.PlayerPosition;
-import com.springmongodemos.medium_tericcabrel.models.Team;
-import com.springmongodemos.medium_tericcabrel.repositories.PlayerRepository;
-import com.springmongodemos.medium_tericcabrel.repositories.TeamRepository;
+import com.springmongodemos.tericcabrel.models.Address;
+import com.springmongodemos.tericcabrel.models.Player;
+import com.springmongodemos.tericcabrel.models.PlayerPosition;
+import com.springmongodemos.tericcabrel.models.Team;
+import com.springmongodemos.tericcabrel.repositories.PlayerRepository;
+import com.springmongodemos.tericcabrel.repositories.TeamRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;

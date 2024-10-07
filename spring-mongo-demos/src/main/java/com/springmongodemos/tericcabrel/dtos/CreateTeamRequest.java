@@ -1,7 +1,7 @@
-package com.springmongodemos.medium_tericcabrel.dtos;
+package com.springmongodemos.tericcabrel.dtos;
 
-import com.springmongodemos.medium_tericcabrel.models.Address;
-import com.springmongodemos.medium_tericcabrel.models.Team;
+import com.springmongodemos.tericcabrel.models.Address;
+import com.springmongodemos.tericcabrel.models.Team;
 import lombok.Getter;
 import lombok.Setter;
 

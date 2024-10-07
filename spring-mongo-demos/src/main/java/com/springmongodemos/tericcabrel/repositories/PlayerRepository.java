@@ -1,7 +1,7 @@
-package com.springmongodemos.medium_tericcabrel.repositories;
+package com.springmongodemos.tericcabrel.repositories;
 
-import com.springmongodemos.medium_tericcabrel.models.Player;
-import com.springmongodemos.medium_tericcabrel.models.PlayerPosition;
+import com.springmongodemos.tericcabrel.models.Player;
+import com.springmongodemos.tericcabrel.models.PlayerPosition;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;

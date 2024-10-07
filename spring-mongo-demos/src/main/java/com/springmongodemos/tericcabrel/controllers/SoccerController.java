@@ -1,4 +1,4 @@
-package com.springmongodemos.medium_tericcabrel.controllers;
+package com.springmongodemos.tericcabrel.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,12 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.springmongodemos.medium_tericcabrel.dtos.CreatePlayerRequest;
-import com.springmongodemos.medium_tericcabrel.dtos.CreateTeamRequest;
-import com.springmongodemos.medium_tericcabrel.models.Player;
-import com.springmongodemos.medium_tericcabrel.models.Team;
-import com.springmongodemos.medium_tericcabrel.repositories.PlayerRepository;
-import com.springmongodemos.medium_tericcabrel.repositories.TeamRepository;
+import com.springmongodemos.tericcabrel.dtos.CreatePlayerRequest;
+import com.springmongodemos.tericcabrel.dtos.CreateTeamRequest;
+import com.springmongodemos.tericcabrel.models.Player;
+import com.springmongodemos.tericcabrel.models.Team;
+import com.springmongodemos.tericcabrel.repositories.PlayerRepository;
+import com.springmongodemos.tericcabrel.repositories.TeamRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

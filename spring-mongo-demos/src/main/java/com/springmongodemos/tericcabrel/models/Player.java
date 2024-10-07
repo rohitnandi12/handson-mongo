@@ -1,4 +1,4 @@
-package com.springmongodemos.medium_tericcabrel.models;
+package com.springmongodemos.tericcabrel.models;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 
 @EqualsAndHashCode(callSuper = true)
-@Document(collection = "medium_tericcabrel_players")
+@Document(collection = "tericcabrel_players")
 @Accessors(chain = true)
 @NoArgsConstructor
 @Data

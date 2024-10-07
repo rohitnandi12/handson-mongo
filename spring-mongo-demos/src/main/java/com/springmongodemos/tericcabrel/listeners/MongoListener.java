@@ -1,6 +1,6 @@
-package com.springmongodemos.medium_tericcabrel.listeners;
+package com.springmongodemos.tericcabrel.listeners;
 
-import com.springmongodemos.medium_tericcabrel.models.BaseModel;
+import com.springmongodemos.tericcabrel.models.BaseModel;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
 import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
 import org.springframework.stereotype.Component;

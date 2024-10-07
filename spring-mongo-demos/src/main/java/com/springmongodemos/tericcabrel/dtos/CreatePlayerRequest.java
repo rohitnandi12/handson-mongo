@@ -1,7 +1,7 @@
-package com.springmongodemos.medium_tericcabrel.dtos;
+package com.springmongodemos.tericcabrel.dtos;
 
-import com.springmongodemos.medium_tericcabrel.models.Player;
-import com.springmongodemos.medium_tericcabrel.models.PlayerPosition;
+import com.springmongodemos.tericcabrel.models.Player;
+import com.springmongodemos.tericcabrel.models.PlayerPosition;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;

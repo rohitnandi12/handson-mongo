@@ -1,6 +1,6 @@
-package com.springmongodemos.medium_tericcabrel.repositories;
+package com.springmongodemos.tericcabrel.repositories;
 
-import com.springmongodemos.medium_tericcabrel.models.Team;
+import com.springmongodemos.tericcabrel.models.Team;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

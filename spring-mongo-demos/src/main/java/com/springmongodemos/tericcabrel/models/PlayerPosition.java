@@ -1,4 +1,4 @@
-package com.springmongodemos.medium_tericcabrel.models;
+package com.springmongodemos.tericcabrel.models;
 
 import lombok.Getter;
 

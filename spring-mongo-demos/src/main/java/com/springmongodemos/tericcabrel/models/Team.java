@@ -1,4 +1,4 @@
-package com.springmongodemos.medium_tericcabrel.models;
+package com.springmongodemos.tericcabrel.models;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @EqualsAndHashCode(callSuper = true)
-@Document(collection = "medium_tericcabrel_teams")
+@Document(collection = "tericcabrel_teams")
 @Accessors(chain = true)
 @Data
 public class Team extends BaseModel {
