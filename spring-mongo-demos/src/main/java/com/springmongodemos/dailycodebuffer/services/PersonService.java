@@ -34,10 +34,12 @@ public class PersonService {
     }
 
     public List<Person> getAllPersons() {
+//         mongoTemplate.findAll();
         return personRepository.findAll();
     }
 
     public Person addPerson(Person person) {
+//        mongoTemplate.save(person)
         return personRepository.save(person);
     }
 
